@@ -1,5 +1,10 @@
-function ContactsController($state) {
+function ContactsController($filter, $state) {
   var ctrl = this;
+
+  ctrl.$onInit = function() {
+    ctrl.filteredContacts = $filter('contactsFilter')(ctrl.contacts, ctrl.filter);
+  };
+
   ctrl.goToContact = function (event) {
     $state.go('contact', {
       id: event.contactId
