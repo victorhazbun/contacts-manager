@@ -1,20 +1,18 @@
 function AuthFormController() {
   var ctrl = this;
-
-  ctrl.onChanges = function(changes) {
+  ctrl.$onChanges = function (changes) {
     if (changes.user) {
-      // breaking two way data binding
       ctrl.user = angular.copy(ctrl.user);
     }
-  }
-  ctrl.submitForm = function() {
+  };
+  ctrl.submitForm = function () {
     ctrl.onSubmit({
       $event: {
         user: ctrl.user
       }
     });
   };
-};
+}
 
 angular
   .module('components.auth')

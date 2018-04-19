@@ -1,6 +1,6 @@
 function ContactNewController(ContactService, $state) {
   var ctrl = this;
-  ctrl.$onInit = function() {
+  ctrl.$onInit = function () {
     ctrl.contact = {
       name: '',
       email: '',
@@ -15,14 +15,13 @@ function ContactNewController(ContactService, $state) {
       tag: 'none'
     };
   };
-
-  ctrl.createNewContact = function(event) {
+  ctrl.createNewContact = function (event) {
     return ContactService
       .createNewContact(event.contact)
-      .then(function(contact) {
+      .then(function (contact) {
         $state.go('contact', {
           id: contact.key
-        })
+        });
       });
   };
 }

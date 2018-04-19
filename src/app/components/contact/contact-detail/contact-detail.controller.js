@@ -1,6 +1,5 @@
 function ContactDetailController() {
   var ctrl = this;
-
   ctrl.$onInit = function () {
     ctrl.isNewContact = !ctrl.contact.$id;
   };
@@ -25,6 +24,10 @@ function ContactDetailController() {
       }
     });
   };
+  ctrl.tagChange = function (event) {
+    ctrl.contact.tag = event.tag;
+    ctrl.updateContact();
+  }
 }
 
 angular

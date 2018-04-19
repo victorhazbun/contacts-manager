@@ -4,6 +4,7 @@ angular
     'firebase'
   ])
   .config(function ($firebaseRefProvider) {
+
     var config = {
       apiKey: "AIzaSyB0Ho4tI2NEFS3-0WmK-f_pxduJ4bgSsLc",
       authDomain: "contacts-manager-2d5ec.firebaseapp.com",
@@ -12,29 +13,30 @@ angular
       storageBucket: "contacts-manager-2d5ec.appspot.com",
       messagingSenderId: "186915116846"
     };
+
     $firebaseRefProvider
       .registerUrl({
         default: config.databaseURL,
-        contacts: config.databaseURL + '/contacts',
-      })
+        contacts: config.databaseURL + '/contacts'
+      });
+
     firebase.initializeApp(config);
   })
-  .run(function($transitions, $state, AuthService) {
+  .run(function ($transitions, $state, AuthService) {
     $transitions.onStart({
-      to: function(state) {
-        return !!(state.data && state.data.requireAuth);
+      to: function (state) {
+        return !!(state.data && state.data.requiredAuth);
       }
     }, function() {
       return AuthService
         .requireAuthentication()
-        .catch(function() {
+        .catch(function () {
           return $state.target('auth.login');
         });
     });
-
     $transitions.onStart({
       to: 'auth.*'
-    }, function() {
+    }, function () {
       if (AuthService.isAuthenticated()) {
         return $state.target('app');
       }

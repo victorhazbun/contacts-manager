@@ -1,24 +1,22 @@
 function LoginController(AuthService, $state) {
   var ctrl = this;
-
-  ctrl.$onInit = function() {
+  ctrl.$onInit = function () {
     ctrl.error = null;
     ctrl.user = {
       email: '',
       password: ''
     };
   };
-
-  ctrl.loginUser = function(event) {
+  ctrl.loginUser = function (event) {
     return AuthService
       .login(event.user)
-      .then(function() {
+      .then(function () {
         $state.go('app');
-      }, function(reason) {
+      }, function (reason) {
         ctrl.error = reason.message;
       });
-  }
-};
+  };
+}
 
 angular
   .module('components.auth')

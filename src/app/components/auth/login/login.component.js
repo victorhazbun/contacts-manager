@@ -6,7 +6,7 @@ var login = {
 angular
   .module('components.auth')
   .component('login', login)
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('auth', {
         redirectTo: 'auth.login',
@@ -17,5 +17,5 @@ angular
         url: '/login',
         component: 'login'
       });
-    $urlRouterProvider.otherwise('auth/login');
+    $urlRouterProvider.otherwise('/auth/login');
   });

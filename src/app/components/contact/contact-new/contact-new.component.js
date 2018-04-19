@@ -6,10 +6,10 @@ var contactNew = {
 angular
   .module('components.contact')
   .component('contactNew', contactNew)
-  .config(function($stateProvider) {
+  .config(function ($stateProvider) {
     $stateProvider
       .state('new', {
-        parent: 'app', // inherits from app component
+        parent: 'app',
         url: '/new',
         component: 'contactNew'
       });

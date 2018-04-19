@@ -6,14 +6,14 @@ var app = {
 angular
   .module('common')
   .component('app', app)
-  .config(function($stateProvider) {
+  .config(function ($stateProvider) {
     $stateProvider
       .state('app', {
-        // redirect: 'contacts',
+        // redirectTo: 'contacts'
         url: '/app',
         data: {
           requiredAuth: true
         },
         component: 'app'
-      });
+      })
   });
