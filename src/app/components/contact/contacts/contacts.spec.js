@@ -73,6 +73,7 @@ describe('Contact', function () {
     }));
 
     it('should filter contacts', function() {
+      controller.$onInit();
       expect(controller.filteredContacts).toEqual([{
         name: 'John Doe',
         tag: 'friends'
