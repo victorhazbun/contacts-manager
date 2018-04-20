@@ -1,10 +1,6 @@
-## Live demo of app
+#### Live demo of app
 
-[Here's the app](https://contacts-manager-2d5ec.firebaseapp.com) you're about to build, check it out! Create a user or login to get started with the contacts manager.
-
-## Setup and install
-
-Fork this repo from inside GitHub so you can commit directly to your account, or simply download the `.zip` bundle with the contents inside.
+[Here's the app](https://contacts-manager-2d5ec.firebaseapp.com)
 
 #### Dependency installation
 
